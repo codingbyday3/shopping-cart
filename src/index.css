@@ -28,6 +28,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: var(--ff-inter);
+  background-color: var(--clr-white);
 }
 img, picture, video, canvas, svg {
   display: block;

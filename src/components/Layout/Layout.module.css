@@ -1,0 +1,22 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    align-items: center;
+    background-color: var(--clr-black);
+}
+h1{
+    color: var(--clr-green);
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.headerLink{
+    text-decoration: none;
+    color: var(--clr-gray);
+    font-weight: 700;
+}

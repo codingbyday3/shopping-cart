@@ -1,4 +1,5 @@
 import { Link,Outlet } from "react-router-dom"
+import styles from "./Layout.module.css"
 
 const Layout = ()=>{
     return(
@@ -8,10 +9,10 @@ const Layout = ()=>{
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/">Home Page</Link>
+                            <Link className={styles.headerLink} to="/">Home Page</Link>
                         </li>
                         <li>
-                            <Link to="/shop">Shop</Link>
+                            <Link className={styles.headerLink}  to="/shop">Shop</Link>
                         </li>
                     </ul>
                 </nav>
