@@ -1,8 +1,13 @@
+import Item from "./Item"
+
 const Cart = () =>{
     return(
-        <div>
-            <h1>Cart</h1>
-        </div>
+        <section>
+            <h2>Your's selected items</h2>
+            <div>
+                <Item />
+            </div>
+        </section>
     )
 }
 
