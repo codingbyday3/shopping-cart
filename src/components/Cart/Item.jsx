@@ -1,9 +1,17 @@
+import styles from "./Cart.module.css"
+
 const Item = ()=>{
     return(
-        <div>
-            <img src="" alt="" />
-            <strong>Shirt</strong>
-            <p>Quantity: 2</p>
+        <div className={styles.item}>
+            <div>
+                <img src="" alt="" />
+                <div>
+                    <strong>Shirt</strong>
+                    <p>Quantity: 2</p>
+                </div>
+
+            </div>
+
             <button>-</button>
         </div>
     )

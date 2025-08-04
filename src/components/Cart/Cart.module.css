@@ -1,0 +1,31 @@
+.section{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.item{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.item button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--clr-red-light);
+    color: red;
+    font-size: 1.3rem;
+}
+
+.itemsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
