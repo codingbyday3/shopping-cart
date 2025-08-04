@@ -21,4 +21,9 @@ nav ul{
     text-decoration: none;
     color: var(--clr-gray);
     font-weight: 700;
+    transition: 200ms color ease-in;
+}
+
+.headerLink:hover{
+    color: var(--clr-green);
 }
