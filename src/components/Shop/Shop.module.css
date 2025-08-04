@@ -1,6 +1,7 @@
 .section{
     padding: 2rem;
     position: relative;
+    height: 100%;
 }
 
 .section h2{
@@ -9,14 +10,14 @@
 
 .aside{
     background-color: white;
-    position: absolute;
+    position: fixed;
     right: 0;
     width: 200px;
     padding: 0.5rem 2rem;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     display: flex;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.418);
 }
 
 .cartContainer{
@@ -136,3 +137,20 @@
     
 }
 
+
+@media (max-width: 600px){
+    .aside{
+        bottom: 40px;
+        right: 30px;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .cartContainer p{
+        top: 14px;
+    }
+}

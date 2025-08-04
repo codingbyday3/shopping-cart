@@ -29,6 +29,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: var(--ff-inter);
   background-color: var(--clr-white);
+  height: 100dvh;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -49,4 +50,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 #root, #__next {
   isolation: isolate;
+}
+
+#root{
+  height: 100%;
+}
+
+main{
+  height: 100%;
 }
