@@ -5,8 +5,10 @@ header{
     align-items: center;
     background-color: var(--clr-black);
 }
-h1{
+
+.pageHeading{
     color: var(--clr-green);
+    text-decoration: none;
 }
 
 nav ul{

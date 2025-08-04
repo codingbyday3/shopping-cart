@@ -5,7 +5,10 @@ const Layout = ()=>{
     return(
         <>
             <header>
+                <Link to={"/"} className={styles.pageHeading}>
                 <h1>Shop.com</h1>
+                </Link>
+
                 <nav>
                     <ul>
                         <li>
