@@ -36,6 +36,7 @@
     200ms color ease-in-out,
     200ms background-color ease-in-out
     ;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.473);
 }
 
 .description a:hover{
