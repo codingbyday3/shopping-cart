@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.section h2{
+    width: fit-content;
+}
+
 .aside{
     background-color: white;
     position: absolute;
