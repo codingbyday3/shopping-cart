@@ -1,0 +1,109 @@
+.section{
+    padding: 2rem;
+    position: relative;
+}
+
+.aside{
+    background-color: white;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    padding: 0.5rem 2rem;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+
+}
+
+.cartContainer{
+    position: relative;
+    width: fit-content;
+}
+
+.cart{
+    width: 30px;
+}
+
+.cartContainer p{
+    position: absolute;
+    bottom: 0;
+    left: 13px;
+    background-color: var(--clr-green);
+    border-radius: 50%;
+    font-size: 0.7rem;
+    color: black;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.card{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.card input{
+    appearance: none;
+    border: none;
+    background-color: var(--clr-gray);
+    width: 30px;
+    outline: none;
+}
+
+.decrement,
+.increment{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    height: 70%;
+    aspect-ratio: 1 / 1 ;
+    border-radius: 50%;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form div{
+    display: flex;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--clr-gray);
+    width: fit-content;
+    padding: 0 5px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.form button[type="submit"]{
+    border: none;
+    background-color: var(--clr-black);
+    color:var(--clr-gray);
+    padding: 10px 0;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+
