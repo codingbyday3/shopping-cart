@@ -27,8 +27,7 @@ const Layout = ()=>{
                             <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
                         </svg>
                     </div>
-                    {showBurgerMenu &&
-                        <ul id="nav">
+                        <ul id="nav" className={`${styles.menuList} ${showBurgerMenu ? styles.show : styles.hide}`}>
                             <li>
                                 <Link className={styles.headerLink} to="/">Home Page</Link>
                             </li>
@@ -36,7 +35,6 @@ const Layout = ()=>{
                                 <Link className={styles.headerLink}  to="/shop">Shop</Link>
                             </li>
                         </ul>
-                    }
 
                 </nav>
             </header>

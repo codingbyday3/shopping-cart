@@ -13,7 +13,7 @@ header{
 
 
 
-nav ul{
+.menuList{
     display: flex;
     list-style: none;
     gap: 2rem;
@@ -52,7 +52,8 @@ nav ul{
         gap: 2rem;
     }
 
-    nav ul{
+    .menuList{
+        display: none;
         position: absolute;
         flex-direction: column;
         gap:2rem;
@@ -61,5 +62,9 @@ nav ul{
         padding: 2rem;
         border-radius: 10px;
         z-index: 10;
+    }
+
+    .show{
+        display: flex;
     }
 }
