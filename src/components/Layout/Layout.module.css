@@ -11,10 +11,13 @@ header{
     text-decoration: none;
 }
 
+
+
 nav ul{
     display: flex;
     list-style: none;
     gap: 2rem;
+
 }
 
 .headerLink{
@@ -26,4 +29,37 @@ nav ul{
 
 .headerLink:hover{
     color: var(--clr-green);
+}
+
+.burgerMenu{
+    display: none;
+    width: 30px;
+    fill: var(--clr-gray);
+}
+
+@media (max-width:600px){
+
+    .burgerMenu{
+        display: block;
+    }
+
+    nav{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    nav ul{
+        position: absolute;
+        flex-direction: column;
+        gap:2rem;
+        background-color: var(--clr-black);
+        top: 3rem;
+        padding: 2rem;
+        border-radius: 10px;
+        z-index: 10;
+    }
 }
