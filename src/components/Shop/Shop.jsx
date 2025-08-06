@@ -1,8 +1,29 @@
 import Card from "./Card"
 import { Link } from "react-router-dom"
 import styles from "./Shop.module.css"
+import { useState, useEffect } from "react"
 
 const Shop = () =>{
+
+    const [items, setItems] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(()=>{
+        const getPruductImages = async ()=>{
+            try{
+                const response = await fetch('https://fakestoreapi.com/products')
+                const data = await response.json()
+                setItems(data)
+            }catch (error){
+                console.log(error)
+            }finally{
+                setLoading(false)
+            }
+        }
+        getPruductImages()  
+
+    },[])
+
     return (
         <section className={styles.section}>
             <aside className={styles.aside}>
@@ -17,10 +38,13 @@ const Shop = () =>{
             <div>
                 <h2>Available items</h2>
                 <div className={styles.cardsContainer}>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+            
+                    {(loading || !items)?
+                        <div>Loading...</div>
+                        :
+                        <Card title={items[0].title} price={items[0].price} url={items[0].image} />
+                    }
+                   
                 </div>
 
             </div>

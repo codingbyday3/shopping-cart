@@ -1,11 +1,11 @@
 import styles from "./Shop.module.css"
 
-const Card = () =>{
+const Card = ({title, price, url}) =>{
     return(
         <div className={styles.card}>
-            <img src="" alt="" />
-            <strong>Shirt</strong>
-            <p>Price: 10$</p>
+            <img src={url}  />
+            <strong>{title}</strong>
+            <p>Price: {price}$</p>
             <form className={styles.form}>
                 <div> 
                     <button className={styles.decrement}>-</button>
