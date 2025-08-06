@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-
+import styles from "./HomePage.module.css"
 
 
 const ProductImage = ()=>{
@@ -24,14 +24,13 @@ const ProductImage = ()=>{
 
 
     return(
-        <div>
-            <button>{"<"}</button>
+        <div className={styles.imageContainer}>
+            
             {(loading || !items)?
                 <div>Loading...</div>
                 :
-                <img src={items[0].image} alt="" />
+                <img className={styles.image} src={items[1].image} alt={items[0].title} />
             }
-            <button>{">"}</button>
         </div>
     )
 }
