@@ -46,10 +46,10 @@
 
 .cardsContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-top: 2rem;
     gap: 1rem;
-    max-width: 400px;
+
 }
 
 .card{
@@ -63,7 +63,10 @@
 }
 
 .card img{
-    
+    height: 100%;
+    max-width: 50%;
+    object-fit: contain;
+    align-self: center;
 }
 
 .card input{

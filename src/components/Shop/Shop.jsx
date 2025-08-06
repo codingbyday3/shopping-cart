@@ -37,16 +37,21 @@ const Shop = () =>{
             </aside>
             <div>
                 <h2>Available items</h2>
-                <div className={styles.cardsContainer}>
-            
-                    {(loading || !items)?
-                        <div>Loading...</div>
-                        :
-                        <Card title={items[0].title} price={items[0].price} url={items[0].image} />
-                    }
-                   
-                </div>
 
+                {loading || !items ? (
+                <div>Loading...</div>
+                ) : (
+                <div className={styles.cardsContainer}>
+                    {items.map((item) => (
+                    <Card
+                        key={item.id} // ✅ Add a unique key
+                        title={item.title}
+                        price={item.price}
+                        url={item.image}
+                    />
+                    ))}
+                </div>
+                )}
             </div>
         </section>
     )
