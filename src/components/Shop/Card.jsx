@@ -18,7 +18,8 @@ const Card = ({title, price, url}) =>{
     }
 
     const handInputChange = (e)=>{
-        setDisplayedQuantity(e.target.value)
+        const value = Number(e.target.value)
+        setDisplayedQuantity(value)
     }
 
     return(
