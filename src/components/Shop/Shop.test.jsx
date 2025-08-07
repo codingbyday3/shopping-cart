@@ -5,7 +5,7 @@ import { describe, it, expect} from "vitest"
 
 describe("Card component", ()=>{
     it("increment and decrement input value", async () =>{
-        render(<Card title={"Test product" } price={12} url={"test/url"} />)
+        render(<Card item={{}} />)
 
         const input = screen.getByLabelText("quantity")
         const incrementBtn = screen.getByText("+")

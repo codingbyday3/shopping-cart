@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "./Shop.module.css"
 
-const Card = ({title, price, url}) =>{
+const Card = ({item, addToCart}) =>{
 
     const [displayedQuantity, setDisplayedQuantity] = useState(1)
 
@@ -24,10 +24,10 @@ const Card = ({title, price, url}) =>{
 
     return(
         <div className={styles.card}>
-            <img src={url}  />
-            <strong>{title}</strong>
-            <p>Price: {price}$</p>
-            <form className={styles.form}>
+            <img src={item.image}  />
+            <strong>{item.title}</strong>
+            <p>Price: {item.price}$</p>
+            <form onSubmit={(e) => addToCart(e, item, displayedQuantity)} className={styles.form}>
                 <div> 
                     <button onClick={handleDecrementButton} className={styles.decrement}>-</button>
                     <input onChange={handInputChange} value={displayedQuantity} aria-label="quantity" type="tel" />
