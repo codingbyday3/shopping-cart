@@ -5,11 +5,11 @@ const Item = ({item})=>{
 
     return(
         <div className={styles.item}>
-            <div>
+            <div className={styles.itemHeader}>
                 <img src={item.item.image} alt="" />
                 <div>
                     <strong>{item.item.title}</strong>
-                    <p>Quantity: </p>
+                    <p>Quantity: {item.quantity}</p>
                 </div>
 
             </div>
