@@ -7,7 +7,7 @@ const Shop = () =>{
 
     const [items, setItems] = useState(null)
     const [loading, setLoading] = useState(true)
-        const [cartItems, setCartItems] = useState(() => {
+    const [cartItems, setCartItems] = useState(() => {
         const storedItems = localStorage.getItem("cartItems");
         return storedItems ? JSON.parse(storedItems) : [];
     });
@@ -35,10 +35,26 @@ const Shop = () =>{
         localStorage.setItem("cartItems",JSON.stringify(cartItems))
     }, [cartItems])
 
-    const addToCart = (e,item, quantity)=>{
-        e.preventDefault()
-        setCartItems(prevItems => [...prevItems, {item, quantity: Number(quantity)}])
-    }
+    const addToCart = (e, item, quantity) => {
+        e.preventDefault();
+        const parsedQuantity = Number(quantity);
+        
+        setCartItems(prevItems => {
+
+            const existingItemIndex = prevItems.findIndex(ci => ci.item.id === item.id);
+            
+
+            if (existingItemIndex !== -1) {
+                return prevItems.map((cartItem, index) => 
+                    index === existingItemIndex 
+                        ? { ...cartItem, quantity: cartItem.quantity + parsedQuantity }
+                        : cartItem
+                );
+            }
+            
+            return [...prevItems, { item, quantity: parsedQuantity }];
+        });
+    };
 
     const sumCartItems = ()=>{
         const sum = cartItems.reduce((accumulator, item) => item.quantity + accumulator, 0)

@@ -1,13 +1,15 @@
 import styles from "./Cart.module.css"
 
-const Item = ()=>{
+
+const Item = ({item})=>{
+
     return(
         <div className={styles.item}>
             <div>
-                <img src="" alt="" />
+                <img src={item.item.image} alt="" />
                 <div>
-                    <strong>Shirt</strong>
-                    <p>Quantity: 2</p>
+                    <strong>{item.item.title}</strong>
+                    <p>Quantity: </p>
                 </div>
 
             </div>
