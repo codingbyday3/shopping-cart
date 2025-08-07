@@ -1,6 +1,26 @@
+import { useState } from "react"
 import styles from "./Shop.module.css"
 
 const Card = ({title, price, url}) =>{
+
+    const [displayedQuantity, setDisplayedQuantity] = useState(1)
+
+    const handleIncrementBtn = (e)=>{
+        e.preventDefault()
+        setDisplayedQuantity(num => num + 1)
+    }
+
+    const handleDecrementButton = (e)=>{
+        e.preventDefault()
+        if(displayedQuantity > 1){
+            setDisplayedQuantity(num => num - 1)
+        }
+    }
+
+    const handInputChange = (e)=>{
+        setDisplayedQuantity(e.target.value)
+    }
+
     return(
         <div className={styles.card}>
             <img src={url}  />
@@ -8,9 +28,9 @@ const Card = ({title, price, url}) =>{
             <p>Price: {price}$</p>
             <form className={styles.form}>
                 <div> 
-                    <button className={styles.decrement}>-</button>
-                    <input type="tel" />
-                    <button className={styles.increment}>+</button>
+                    <button onClick={handleDecrementButton} className={styles.decrement}>-</button>
+                    <input onChange={handInputChange} value={displayedQuantity} aria-label="quantity" type="tel" />
+                    <button onClick={handleIncrementBtn}  className={styles.increment}>+</button>
                 </div>
                 <button type="submit">Add to cart</button>
                 

@@ -75,6 +75,7 @@
     background-color: var(--clr-gray);
     width: 30px;
     outline: none;
+    text-align: center;
 }
 
 .decrement,
