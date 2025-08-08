@@ -1,6 +1,7 @@
 import Item from "./Item"
 import styles from "./Cart.module.css"
 import { useState, useEffect } from "react"
+import { Link  } from "react-router-dom"
 
 const Cart = () =>{
 
@@ -35,10 +36,14 @@ const Cart = () =>{
         <section className={styles.section}>
             <h2>Your's selected items</h2>
             <div className={styles.itemsContainer}>
-                {
+                {cartItems.length > 0 ?
                     cartItems.map((item)=>
                         <Item  item={item} handleDelete={() => handleDeleteBtn(item)}/>
                     )
+                    :
+                    <div className={styles.noItemsMessage}>
+                        <Link to={"/shop"}>No items yet click here to add them</Link>
+                    </div>
                 }
 
             </div>
