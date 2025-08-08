@@ -1,7 +1,8 @@
 import styles from "./Cart.module.css"
 
 
-const Item = ({item})=>{
+const Item = ({item, handleDelete})=>{
+
 
     return(
         <div className={styles.item}>
@@ -14,7 +15,7 @@ const Item = ({item})=>{
 
             </div>
 
-            <button>-</button>
+            <button onClick={handleDelete}>-</button>
         </div>
     )
 }

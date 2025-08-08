@@ -9,7 +9,27 @@ const Cart = () =>{
         return storedItems ? JSON.parse(storedItems) : [];
     });
 
-    console.log(cartItems)
+    const handleDeleteBtn = (item)=>{
+        setCartItems(prevItems =>{
+
+            const existingItemIndex = prevItems.findIndex(ci => ci.item.id === item.item.id);
+            if(item.quantity > 1){
+                return prevItems.map((cartItem, index) => 
+                    index === existingItemIndex 
+                        ? { ...cartItem, quantity: cartItem.quantity - 1}
+                        : cartItem
+                );
+            
+            }else{
+                return prevItems.filter(cartItem => cartItem !== item);    
+            }
+            
+        })
+    }
+
+    useEffect(()=>{
+        localStorage.setItem("cartItems",JSON.stringify(cartItems))
+    }, [cartItems])
 
     return(
         <section className={styles.section}>
@@ -17,7 +37,7 @@ const Cart = () =>{
             <div className={styles.itemsContainer}>
                 {
                     cartItems.map((item)=>
-                        <Item  item={item}/>
+                        <Item  item={item} handleDelete={() => handleDeleteBtn(item)}/>
                     )
                 }
 
